@@ -16,7 +16,7 @@ class User < ApplicationRecord
   end
 
   # 名前（全角）
-  with_options presence: true do
+  with_options presence: true, format: { with: VALID_NAME_REGEX } do
     validates :last_name
     validates :first_name
   end
