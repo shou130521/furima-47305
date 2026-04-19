@@ -29,5 +29,4 @@ class User < ApplicationRecord
 
   # パスワード（英数字混合）
   validates :password, format: { with: VALID_PASSWORD_REGEX }, if: :password_required?
-
 end
