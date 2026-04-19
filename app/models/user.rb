@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # 正規表現
-  VALID_NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/
+  VALID_NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥]+\z/
   VALID_KANA_REGEX = /\A[ァ-ヶー－]+\z/
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
 
