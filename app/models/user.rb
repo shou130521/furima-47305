@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :items
+  has_many :purchases
+
   # 正規表現
   VALID_NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥]+\z/
   VALID_KANA_REGEX = /\A[ァ-ヶー－]+\z/
