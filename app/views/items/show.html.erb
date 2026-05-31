@@ -9,9 +9,11 @@
     <div class="item-img-content">
       <%= image_tag @item.image, class:"item-box-img" %>
 
-      <div class="sold-out">
-        <span>Sold Out!!</span>
-      </div>
+      <% if @item.sold_out? %>
+        <div class="sold-out">
+          <span>Sold Out!!</span>
+        </div>
+      <% end %>
 
     </div>
     <div class="item-price-box">
@@ -30,7 +32,7 @@
         <%= link_to "削除", item_path(@item), data: { turbo_method: :delete }, class: "item-destroy" %>
 
       <% else %>
-        <% if @item.purchase.present? %>
+        <% if @item.sold_out? %>
           <%# 売り切れなので何も表示しない %>
 
         <% else %>
