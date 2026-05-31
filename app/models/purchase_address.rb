@@ -33,5 +33,4 @@ class PurchaseAddress
       purchase_id: purchase.id
     )
   end
-
 end
