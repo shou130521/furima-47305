@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
+  def sold_out?
+    purchase.present?
+  end
+
   belongs_to :user
 
   belongs_to :category
