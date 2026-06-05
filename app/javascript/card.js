@@ -1,4 +1,10 @@
 const pay = () => {
+  const form = document.getElementById("charge-form")
+
+  if (form === null) {
+    return
+  }
+  
   const publickey = gon.public_key
   const payjp = Payjp(publickey)
 
@@ -11,8 +17,6 @@ const pay = () => {
   numberElement.mount('#number-form')
   expiryElement.mount('#expiry-form')
   cvcElement.mount('#cvc-form')
-
-  const form = document.getElementById("charge-form")
 
   form.addEventListener("submit", (e) => {
     e.preventDefault()
