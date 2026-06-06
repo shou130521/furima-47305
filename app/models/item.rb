@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
+  def sold_out?
+    purchase.present?
+  end
+
   belongs_to :user
 
   belongs_to :category
@@ -9,6 +13,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :shipping_day
   has_one_attached :image
+  has_one :purchase
 
   validates :name, presence: true
   validates :description, presence: true
